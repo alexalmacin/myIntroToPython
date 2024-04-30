@@ -205,7 +205,7 @@ The finally block always executes, regardless of whether an exception occurred o
 Understanding control flow is essential for writing programs that can make decisions, iterate over data, and handle errors effectively. 
 It gives you the flexibility to create complex logic and solve a wide range of problems in Python.
 
-# Functions
+# FUNCTIONS
 
 Functions in Python are blocks of reusable code that perform a specific task. 
 They help in organizing code into manageable pieces, making it easier to understand, debug, and maintain. 
