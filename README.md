@@ -254,6 +254,62 @@ Variables defined outside a function are global and can be accessed from within 
     		print(x)  # Accesses the global variable x
 
 	print_x()  # Prints 10
+# Classes and Objects 
+
+In Python, a class is a blueprint for creating objects, and an object is an instance of a class. 
+
+Class: A class is a template or blueprint that defines the attributes (properties) and methods (functions) that all objects of that class will have. 
+It serves as a blueprint for creating objects. You define a class using the class keyword.
+
+	class Dog:
+    	   def __init__(self, name, age):
+        	self.name = name
+        	self.age = age
+    
+    	   def bark(self):
+        	print(f"{self.name} says Woof!")
+
+In this example, Dog is a class that has attributes name and age, and a method bark().
+
+Object: An object is an instance of a class. 
+It's a specific realization of the class, with its own unique attributes and methods. 
+You create objects from a class using the class name followed by parentheses (). 
+	my_dog = Dog("Buddy", 3)
+
+In this example, my_dog is an object (instance) of the Dog class. It has its own name ("Buddy") and age (3).
+
+Attributes: Attributes are variables that hold data associated with a class or an object. 
+They represent the state of the object. You access attributes using dot notation (object.attribute).
+	print(my_dog.name)  # Output: Buddy
+	print(my_dog.age)   # Output: 3
+
+Methods: Methods are functions that are defined within a class and perform operations on the object's attributes. 
+They represent the behavior of the object. You call methods using dot notation (object.method()).
+	my_dog.bark()  # Output: Buddy says Woof!
+
+Constructor (__init__): The __init__ method is a special method called the constructor. 
+It is automatically called when you create a new object of the class and is used to initialize the object's attributes.
+	def __init__(self, name, age):
+    	self.name = name
+    	self.age = age
+
+Self: self is a reference to the current instance of the class. It is used to access variables and methods within the class.
+
+Inheritance: Inheritance is a mechanism in which a new class inherits properties and behavior (attributes and methods) from an existing class. 
+The new class is called a subclass, and the existing class is called a superclass or parent class.
+
+	class Labrador(Dog):
+    	def __init__(self, name, age, color):
+        super().__init__(name, age)
+        self.color = color
+
+In this example, Labrador is a subclass of Dog, and it inherits the attributes and methods of the Dog class.
+
+Understanding classes and objects is fundamental in object-oriented programming (OOP) and allows you to create modular and reusable code in Python. 
+Classes help in organizing code into logical units and promote code reuse and maintainability.
+
+
+
 
 
 
