@@ -205,6 +205,62 @@ The finally block always executes, regardless of whether an exception occurred o
 Understanding control flow is essential for writing programs that can make decisions, iterate over data, and handle errors effectively. 
 It gives you the flexibility to create complex logic and solve a wide range of problems in Python.
 
+# Functions
+
+Functions in Python are blocks of reusable code that perform a specific task. 
+They help in organizing code into manageable pieces, making it easier to understand, debug, and maintain. 
+
+Defining Functions: You define a function using the def keyword followed by the function name and parentheses ().
+	def greet(name):
+    	print("Hello, " + name + "!")
+
+In this example, greet is the function name, and name is a parameter that the function expects.
+
+Calling Functions: To execute the code inside a function, you "call" the function by using its name followed by parentheses and passing any required arguments.
+	greet("Alice")
+
+This line of code calls the greet function and passes the string "Alice" as the name parameter.
+
+Return Statement: Functions can optionally return a value using the return statement. This allows the function to send data back to the caller.
+	def add(x, y):
+    	return x + y
+
+In this example, the add function takes two parameters x and y, adds them together, and returns the result.
+
+Function Arguments: Functions can have both positional and keyword arguments. 
+Positional arguments are passed based on their position, while keyword arguments are passed with a keyword and a value.
+	def greet(name, message="Hello"):
+    	print(message + ", " + name + "!")
+	
+In this modified greet function, message is a keyword argument with a default value of "Hello". 
+If no message is provided when calling the function, it will default to "Hello".
+
+Docstrings: Docstrings are documentation strings that describe what the function does. 
+They are enclosed in triple quotes """ and are placed immediately after the function definition.
+
+	def greet(name):
+    	"""
+    	This function greets the user with their name.
+    	"""
+    	print("Hello, " + name + "!")
+
+Docstrings help other developers understand how to use the function and what it does.
+
+Scope: Variables defined inside a function are local to that function and cannot be accessed from outside. 
+Variables defined outside a function are global and can be accessed from within the function.
+	x = 10
+
+	def print_x():
+    		print(x)  # Accesses the global variable x
+
+	print_x()  # Prints 10
+
+
+
+
+
+
+
 
 
 
