@@ -5,7 +5,7 @@ INTRODUCTION
 The Zen of Python is a set of guiding principles for writing computer programs in the Python programming language. 
 It's not just about syntax and technicalities; it encapsulates the philosophy and style of writing Pythonic code. 
 
-Beautiful is better than ugly.
+Beautiful is better than ugly. <br>
 Explicit is better than implicit.
 Simple is better than complex.
 Complex is better than complicated.
