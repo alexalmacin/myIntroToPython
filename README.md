@@ -148,7 +148,7 @@ Identity Operators: These operators are used to compare the memory locations of 
 	print(x is y)   # Checks if x and y refer to the same object
 	print(x is not z) # Checks if x and z do not refer to the same object
 
- # CONTROL FLOW 
+# CONTROL FLOW 
 
 Control flow in Python refers to the order in which statements are executed in a program. 
 It allows you to make decisions, execute code conditionally, and repeat code based on certain conditions. 
@@ -180,5 +180,32 @@ Loops (for, while): Loops allow you to execute a block of code repeatedly.
 Break and Continue Statements: These statements are used within loops to alter the flow of control.
 	Break: Terminates the loop prematurely when a certain condition is met.
 		fruits = ["apple", "banana", "cherry"]
+
+		for fruit in fruits:
+    		if fruit == "banana":
+        		break
+    		print(fruit)
+	Continue: Skips the rest of the code inside the loop for the current iteration and continues with the next iteration.
+		fruits = ["apple", "banana", "cherry"]
+
+		for fruit in fruits:
+    		if fruit == "banana":
+        		continue
+    		print(fruit)
+Exception Handling (try, except, finally): Allows you to handle errors or exceptional situations gracefully without crashing the program.
+	try:
+    		x = 10 / 0
+	except ZeroDivisionError:
+    		print("Error: Division by zero")
+	finally:
+    		print("This block always executes")
+
+In this example, the try block attempts to execute the code inside it, and if an exception occurs, the except block catches the exception and handles it. 
+The finally block always executes, regardless of whether an exception occurred or not.
+Understanding control flow is essential for writing programs that can make decisions, iterate over data, and handle errors effectively. 
+It gives you the flexibility to create complex logic and solve a wide range of problems in Python.
+
+
+
 
 
