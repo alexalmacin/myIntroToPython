@@ -148,3 +148,37 @@ Identity Operators: These operators are used to compare the memory locations of 
 	print(x is y)   # Checks if x and y refer to the same object
 	print(x is not z) # Checks if x and z do not refer to the same object
 
+ # CONTROL FLOW 
+
+Control flow in Python refers to the order in which statements are executed in a program. 
+It allows you to make decisions, execute code conditionally, and repeat code based on certain conditions. 
+
+Conditional Statements (if, elif, else): Conditional statements allow you to execute different blocks of code based on specified conditions.
+	x = 10
+
+	if x > 0:
+    	print("x is positive")
+	elif x == 0:
+    	print("x is zero")
+	else:
+    	print("x is negative")
+
+In this example, the if, elif, and else statements check the value of x and execute different print statements accordingly.
+
+Loops (for, while): Loops allow you to execute a block of code repeatedly.
+	For Loops: Used to iterate over a sequence (like lists, tuples, or strings) or to execute a block of code a specific number of times.
+		fruits = ["apple", "banana", "cherry"]
+
+		for fruit in fruits:
+    		print(fruit)
+	While Loops: Continuously executes a block of code as long as a specified condition is true.
+		x = 0
+
+		while x < 5:
+    		print(x)
+    		x += 1
+Break and Continue Statements: These statements are used within loops to alter the flow of control.
+	Break: Terminates the loop prematurely when a certain condition is met.
+		fruits = ["apple", "banana", "cherry"]
+
+
