@@ -138,10 +138,12 @@ Assignment Operators: These operators are used to assign values to variables.
 	x += 5      # Adds 5 to the current value of x (Equivalent to x = x + 5)
 
 Membership Operators: These operators are used to test for membership in a sequence (lists, tuples, strings).
+```
 	x = [1, 2, 3, 4, 5]
 
 	print(3 in x)   # Checks if 3 is in the list x
 	print(6 not in x) # Checks if 6 is not in the list x
+```
 
 Identity Operators: These operators are used to compare the memory locations of two objects.
 
