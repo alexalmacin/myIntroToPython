@@ -30,7 +30,8 @@ These principles serve as guidelines to help Python developers write code that i
 Following the Zen of Python can lead to more enjoyable programming experiences and higher-quality software.
 
 # Day 2
-## VARIABLES AND TYPES
+## Getting Started
+### VARIABLES AND TYPES
 - Variables:
 Variables are used to store data values. Think of them as containers that hold information that your program can manipulate. 
 
@@ -309,6 +310,49 @@ In this example, Labrador is a subclass of Dog, and it inherits the attributes a
 
 Understanding classes and objects is fundamental in object-oriented programming (OOP) and allows you to create modular and reusable code in Python. 
 Classes help in organizing code into logical units and promote code reuse and maintainability.
+
+# Day 3
+## Basic Data Types
+### Ints and Floats
+
+int and float are two different types of numerical data types used to represent integers and floating-point numbers, respectively.
+
+Integers (int): <br>
+Integers are whole numbers, meaning they don't have any decimal or fractional parts. <br>
+Examples of integers are: -10, 0, 42, 1000, etc. <br>
+In Python, integers can be positive, negative, or zero. <br>
+You can perform arithmetic operations like addition, subtraction, multiplication, and division on integers. <br>
+In Python, integer variables are declared without any decimal point.
+
+x = 5    # This is an integer assignment
+y = -10  # This is also an integer assignment
+
+Floating-Point Numbers (float): <br>
+Floating-point numbers, or floats, are numbers that have both integer and fractional parts. <br>
+Examples of floats are: 3.14, 0.5, 1.0, -123.456, etc. <br>
+Floats can represent a wide range of numbers, including very small and very large values, with varying levels of precision.<br>
+In Python, floating-point variables are declared with a decimal point or in scientific notation. 
+
+a = 3.14    # This is a floating-point assignment
+b = -0.5    # This is also a floating-point assignment
+
+The difference between integers and floats in Python:
+# Integer variables
+x = 5
+y = -10
+
+# Float variables
+a = 3.14
+b = -0.5
+
+# Performing arithmetic operations
+sum_int = x + y  # Sum of two integers
+sum_float = a + b  # Sum of two floats
+
+print("Sum of integers:", sum_int)  # Output: Sum of integers: -5
+print("Sum of floats:", sum_float)  # Output: Sum of floats: 2.64
+
+In summary, integers are used to represent whole numbers, while floats are used to represent numbers with decimal parts. 
 
 
 
