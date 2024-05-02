@@ -29,7 +29,8 @@ Namespaces are one honking great idea -- let's do more of those!
 These principles serve as guidelines to help Python developers write code that is not only functional but also elegant, maintainable, and easy to collaborate on. 
 Following the Zen of Python can lead to more enjoyable programming experiences and higher-quality software.
 
-# VARIABLES AND TYPES
+# Day 2
+## VARIABLES AND TYPES
 - Variables:
 Variables are used to store data values. Think of them as containers that hold information that your program can manipulate. 
 
