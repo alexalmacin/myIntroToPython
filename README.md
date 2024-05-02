@@ -1,6 +1,7 @@
-INTRODUCTION	
+# Day 1 
+## INTRODUCTION	
 
-# THE ZEN OF PYTHON 
+### THE ZEN OF PYTHON 
 	
 The Zen of Python is a set of guiding principles for writing computer programs in the Python programming language. 
 It's not just about syntax and technicalities; it encapsulates the philosophy and style of writing Pythonic code. 
