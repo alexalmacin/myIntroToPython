@@ -399,6 +399,62 @@ print("Sum of floats:", sum_float)  # Output: Sum of floats: 2.64
 
 In summary, integers are used to represent whole numbers, while floats are used to represent numbers with decimal parts. 
 
+## Alternative Number Types 
+
+In Python, there are alternative number types beyond just integers (int) and floating-point numbers (float). <br>
+These alternative types offer specialized functionality or optimizations for certain use cases.
+
+### Complex Numbers (complex):
+Complex numbers are numbers that have a real part and an imaginary part, represented as a + bj, where a is the real part, b is the imaginary part, and j is the imaginary unit (√-1).
+Examples of complex numbers are: 3 + 4j, -2 - 5j, etc.
+Python supports complex numbers directly with its built-in complex type.
+
+```
+z = 3 + 4j  # This is a complex number assignment
+```
+
+### Decimal Numbers (decimal):
+Decimal numbers are floating-point numbers with fixed precision.
+They are useful for applications where exact decimal representation is required, such as financial calculations.
+Python's decimal module provides support for decimal numbers through the Decimal class.
+
+```
+from decimal import Decimal
+
+d = Decimal('3.14')  # This is a decimal number assignment
+```
+
+### Fractions (fractions):
+Fractions represent rational numbers as fractions of two integers: numerator and denominator.
+They are useful for precise fractional arithmetic.
+Python's fractions module provides support for fractions through the Fraction class.
+
+```
+from fractions import Fraction
+
+f = Fraction(3, 4)  # This is a fraction assignment representing 3/4
+```
+
+### Boolean (bool):
+Boolean values represent truth values, True or False.
+They are used for logical operations and comparisons.
+Boolean values are often the result of conditional expressions
+
+```
+b = True  # This is a boolean assignment
+```
+
+### None (NoneType):
+None represents the absence of a value or a null value.
+It is often used to indicate that a variable or expression does not have a meaningful value.
+It is a singleton object of the NoneType.
+
+```
+n = None  # This is a None assignment
+```
+
+These alternative number types provide additional functionality and precision beyond what integers and floats offer, catering to specific needs such as complex arithmetic, precise decimal calculations, and rational arithmetic. 
+
 
 
 
