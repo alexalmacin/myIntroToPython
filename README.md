@@ -53,14 +53,14 @@ Here are some common data types in Python:
 - tuple: Similar to lists but immutable (cannot be changed), enclosed in parentheses (), like (1, 2, 3), ("red", "green", "blue").
 - dict: Collection of key-value pairs, enclosed in curly braces {}, like {"name": "Alice", "age": 30}.
 
-# DYNAMIC TYPING
+## DYNAMIC TYPING
 Unlike some other programming languages, Python is dynamically typed, meaning you don't need to declare the type of a variable before assigning a value to it. 
 Python infers the type based on the value assigned. 
 
 x = 5  # x is now an integer
 x = "hello"  # x is now a string
 
-# TYPE CONVERSION 
+## TYPE CONVERSION 
 You can convert values from one type to another using built-in functions like int(), float(), str(), etc. 
 
 num_str = "10"
@@ -77,7 +77,7 @@ Understanding variables and types is fundamental in Python programming. They all
 	What symbol do "comments" start with?
 	#
 
-# DATA STRUCTURES
+## DATA STRUCTURES
 Data structures in Python are a way of organizing and storing data so that it can be used efficiently. 
 Python offers several built-in data structures that can be used to store collections of data.
 
@@ -98,11 +98,11 @@ Strings: Strings are sequences of characters. They are immutable, meaning you ca
 
 Each data structure has its own set of methods and operations that you can use to manipulate and access the data it contains.
 
-# OPERATORS
+## OPERATORS
 Operators in Python are symbols or keywords that perform operations on one or more operands (values or variables). 
 They allow you to perform tasks like arithmetic calculations, comparisons, logical operations, and more.
 
-Arithmetic Operators: These operators perform arithmetic operations like addition, subtraction, multiplication, division, etc.
+### Arithmetic Operators: These operators perform arithmetic operations like addition, subtraction, multiplication, division, etc.
 	x = 10
 	y = 3
 
@@ -114,7 +114,7 @@ Arithmetic Operators: These operators perform arithmetic operations like additio
 	print(x % y)  # Modulus (Remainder)
 	print(x ** y) # Exponentiation
 
-Comparison Operators: These operators are used to compare the values of operands and return True or False.
+### Comparison Operators: These operators are used to compare the values of operands and return True or False.
 	x = 10
 	y = 20
 
@@ -125,19 +125,25 @@ Comparison Operators: These operators are used to compare the values of operands
 	print(x >= y)  # Greater than or equal to
 	print(x <= y)  # Less than or equal to
 
-Logical Operators: These operators perform logical operations on Boolean values (True or False).
+### Logical Operators: These operators perform logical operations on Boolean values (True or False).
+
+```
 	x = True
 	y = False
 	
 	print(x and y)  # Logical AND
 	print(x or y)   # Logical OR
 	print(not x)    # Logical NOT
+```
 
-Assignment Operators: These operators are used to assign values to variables.
+### Assignment Operators: These operators are used to assign values to variables.
+
+```
 	x = 10       # Assigns the value 10 to x
 	x += 5      # Adds 5 to the current value of x (Equivalent to x = x + 5)
+```
 
-Membership Operators: These operators are used to test for membership in a sequence (lists, tuples, strings).
+### Membership Operators: These operators are used to test for membership in a sequence (lists, tuples, strings).
 ```
 	x = [1, 2, 3, 4, 5]
 
@@ -145,7 +151,7 @@ Membership Operators: These operators are used to test for membership in a seque
 	print(6 not in x) # Checks if 6 is not in the list x
 ```
 
-Identity Operators: These operators are used to compare the memory locations of two objects.
+### Identity Operators: These operators are used to compare the memory locations of two objects.
 
 ```
 	x = [1, 2, 3]
@@ -156,7 +162,7 @@ Identity Operators: These operators are used to compare the memory locations of 
 	print(x is not z) # Checks if x and z do not refer to the same object
 ```
 
-# CONTROL FLOW 
+## CONTROL FLOW 
 
 Control flow in Python refers to the order in which statements are executed in a program. 
 It allows you to make decisions, execute code conditionally, and repeat code based on certain conditions. 
@@ -176,7 +182,7 @@ Conditional Statements (if, elif, else): Conditional statements allow you to exe
 
 In this example, the if, elif, and else statements check the value of x and execute different print statements accordingly.
 
-Loops (for, while): Loops allow you to execute a block of code repeatedly.
+### Loops (for, while): Loops allow you to execute a block of code repeatedly.
 	For Loops: Used to iterate over a sequence (like lists, tuples, or strings) or to execute a block of code a specific number of times.
 
  ```
@@ -192,7 +198,7 @@ Loops (for, while): Loops allow you to execute a block of code repeatedly.
     		x += 1
 ```
 
-Break and Continue Statements: These statements are used within loops to alter the flow of control.
+### Break and Continue Statements: These statements are used within loops to alter the flow of control.
 	Break: Terminates the loop prematurely when a certain condition is met.
 
  ```
@@ -227,7 +233,7 @@ The finally block always executes, regardless of whether an exception occurred o
 Understanding control flow is essential for writing programs that can make decisions, iterate over data, and handle errors effectively. 
 It gives you the flexibility to create complex logic and solve a wide range of problems in Python.
 
-# FUNCTIONS
+## FUNCTIONS
 
 Functions in Python are blocks of reusable code that perform a specific task. 
 They help in organizing code into manageable pieces, making it easier to understand, debug, and maintain. 
@@ -241,12 +247,12 @@ Defining Functions: You define a function using the def keyword followed by the 
 
 In this example, greet is the function name, and name is a parameter that the function expects.
 
-Calling Functions: To execute the code inside a function, you "call" the function by using its name followed by parentheses and passing any required arguments.
+### Calling Functions: To execute the code inside a function, you "call" the function by using its name followed by parentheses and passing any required arguments.
 	greet("Alice")
 
 This line of code calls the greet function and passes the string "Alice" as the name parameter.
 
-Return Statement: Functions can optionally return a value using the return statement. This allows the function to send data back to the caller.
+### Return Statement: Functions can optionally return a value using the return statement. This allows the function to send data back to the caller.
 
 ```
 	def add(x, y):
@@ -255,7 +261,7 @@ Return Statement: Functions can optionally return a value using the return state
 
 In this example, the add function takes two parameters x and y, adds them together, and returns the result.
 
-Function Arguments: Functions can have both positional and keyword arguments. 
+### Function Arguments: Functions can have both positional and keyword arguments. 
 Positional arguments are passed based on their position, while keyword arguments are passed with a keyword and a value.
 	def greet(name, message="Hello"):
     	print(message + ", " + name + "!")
@@ -263,7 +269,7 @@ Positional arguments are passed based on their position, while keyword arguments
 In this modified greet function, message is a keyword argument with a default value of "Hello". 
 If no message is provided when calling the function, it will default to "Hello".
 
-Docstrings: Docstrings are documentation strings that describe what the function does. 
+### Docstrings: Docstrings are documentation strings that describe what the function does. 
 They are enclosed in triple quotes """ and are placed immediately after the function definition.
 
 ```
@@ -287,11 +293,11 @@ Variables defined outside a function are global and can be accessed from within 
 	print_x()  # Prints 10
 ```
 
-# Classes and Objects 
+## Classes and Objects 
 
 In Python, a class is a blueprint for creating objects, and an object is an instance of a class. 
 
-Class: A class is a template or blueprint that defines the attributes (properties) and methods (functions) that all objects of that class will have. 
+### Class: A class is a template or blueprint that defines the attributes (properties) and methods (functions) that all objects of that class will have. 
 It serves as a blueprint for creating objects. You define a class using the class keyword.
 
 ```
@@ -305,25 +311,25 @@ class Dog:
 
 In this example, Dog is a class that has attributes name and age, and a method bark().
 
-Object: An object is an instance of a class. 
+### Object: An object is an instance of a class. 
 It's a specific realization of the class, with its own unique attributes and methods. 
 You create objects from a class using the class name followed by parentheses (). 
 	my_dog = Dog("Buddy", 3)
 
 In this example, my_dog is an object (instance) of the Dog class. It has its own name ("Buddy") and age (3).
 
-Attributes: Attributes are variables that hold data associated with a class or an object. 
+### Attributes: Attributes are variables that hold data associated with a class or an object. 
 They represent the state of the object. You access attributes using dot notation (object.attribute).
 	print(my_dog.name)  # Output: Buddy
 	print(my_dog.age)   # Output: 3
 
-Methods: Methods are functions that are defined within a class and perform operations on the object's attributes. 
+### Methods: Methods are functions that are defined within a class and perform operations on the object's attributes. 
 They represent the behavior of the object. You call methods using dot notation (object.method()).
 ```
 my_dog.bark()  # Output: Buddy says Woof!
 ```
 
-Constructor (__init__): The __init__ method is a special method called the constructor. 
+### Constructor (__init__): The __init__ method is a special method called the constructor. 
 It is automatically called when you create a new object of the class and is used to initialize the object's attributes.
 
 ```
@@ -332,9 +338,9 @@ self.name = name
 self.age = age
 ```
 
-Self: self is a reference to the current instance of the class. It is used to access variables and methods within the class.
+### Self: self is a reference to the current instance of the class. It is used to access variables and methods within the class.
 
-Inheritance: Inheritance is a mechanism in which a new class inherits properties and behavior (attributes and methods) from an existing class. 
+### Inheritance: Inheritance is a mechanism in which a new class inherits properties and behavior (attributes and methods) from an existing class. 
 The new class is called a subclass, and the existing class is called a superclass or parent class.
 ```
 class Labrador(Dog):
@@ -354,7 +360,7 @@ Classes help in organizing code into logical units and promote code reuse and ma
 
 int and float are two different types of numerical data types used to represent integers and floating-point numbers, respectively.
 
-Integers (int): <br>
+### Integers (int): <br>
 Integers are whole numbers, meaning they don't have any decimal or fractional parts. <br>
 Examples of integers are: -10, 0, 42, 1000, etc. <br>
 In Python, integers can be positive, negative, or zero. <br>
@@ -366,7 +372,7 @@ x = 5    # This is an integer assignment
 y = -10  # This is also an integer assignment
 ```
 
-Floating-Point Numbers (float): <br>
+### Floating-Point Numbers (float): <br>
 Floating-point numbers, or floats, are numbers that have both integer and fractional parts. <br>
 Examples of floats are: 3.14, 0.5, 1.0, -123.456, etc. <br>
 Floats can represent a wide range of numbers, including very small and very large values, with varying levels of precision.<br>
@@ -454,6 +460,62 @@ n = None  # This is a None assignment
 ```
 
 These alternative number types provide additional functionality and precision beyond what integers and floats offer, catering to specific needs such as complex arithmetic, precise decimal calculations, and rational arithmetic. 
+
+## Booleans
+
+Booleans are a data type used to represent truth values. 
+They can have one of two possible values: True or False. Booleans are essential for making decisions and controlling the flow of your code through conditional statements and loops.
+
+Here's a breakdown of Booleans in Python:
+
+### True and False Values:
+True represents a true or affirmative condition.
+False represents a false or negative condition.
+
+### Boolean Operators:
+Python provides several operators for working with Booleans, including:
+and: Returns True if both operands are True, otherwise returns False.
+or: Returns True if at least one of the operands is True, otherwise returns False.
+not: Returns the opposite Boolean value of the operand. If the operand is True, not returns False, and vice versa.
+
+### Boolean Expressions:
+Boolean expressions are expressions that evaluate to either True or False.
+Examples of Boolean expressions include:
+Comparisons: == (equal), != (not equal), < (less than), > (greater than), <= (less than or equal to), >= (greater than or equal to).
+
+### Logical operations: and, or, not.
+Membership test: in (checks if a value is present in a sequence).
+
+### Conditional Statements:
+Conditional statements, such as if, elif (else if), and else, are used to execute different blocks of code based on Boolean conditions.
+These statements help in decision-making and branching within your code.
+
+```
+# Boolean variables
+is_sunny = True
+is_raining = False
+
+# Boolean expressions
+temperature = 25
+is_warm = temperature > 20
+is_hot = temperature > 30
+
+# Conditional statement
+if is_sunny and not is_raining:
+    print("It's a sunny day!")
+elif is_raining:
+    print("It's raining.")
+else:
+    print("It's neither sunny nor raining.")
+
+if is_warm:
+    print("It's warm outside.")
+if is_hot:
+    print("It's hot outside.")
+```
+
+In this example, we use Boolean variables (is_sunny, is_raining), Boolean expressions (is_warm, is_hot), and conditional statements (if, elif, else) to make decisions based on weather conditions and temperature. 
+
 
 
 
