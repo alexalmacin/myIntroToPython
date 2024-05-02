@@ -144,12 +144,15 @@ Membership Operators: These operators are used to test for membership in a seque
 	print(6 not in x) # Checks if 6 is not in the list x
 
 Identity Operators: These operators are used to compare the memory locations of two objects.
+
+```
 	x = [1, 2, 3]
 	y = [1, 2, 3]
 	z = x
 
 	print(x is y)   # Checks if x and y refer to the same object
 	print(x is not z) # Checks if x and z do not refer to the same object
+```
 
 # CONTROL FLOW 
 
@@ -157,6 +160,8 @@ Control flow in Python refers to the order in which statements are executed in a
 It allows you to make decisions, execute code conditionally, and repeat code based on certain conditions. 
 
 Conditional Statements (if, elif, else): Conditional statements allow you to execute different blocks of code based on specified conditions.
+
+```
 	x = 10
 
 	if x > 0:
@@ -165,11 +170,14 @@ Conditional Statements (if, elif, else): Conditional statements allow you to exe
     	print("x is zero")
 	else:
     	print("x is negative")
+```
 
 In this example, the if, elif, and else statements check the value of x and execute different print statements accordingly.
 
 Loops (for, while): Loops allow you to execute a block of code repeatedly.
 	For Loops: Used to iterate over a sequence (like lists, tuples, or strings) or to execute a block of code a specific number of times.
+
+ ```
 		fruits = ["apple", "banana", "cherry"]
 
 		for fruit in fruits:
@@ -180,8 +188,12 @@ Loops (for, while): Loops allow you to execute a block of code repeatedly.
 		while x < 5:
     		print(x)
     		x += 1
+```
+
 Break and Continue Statements: These statements are used within loops to alter the flow of control.
 	Break: Terminates the loop prematurely when a certain condition is met.
+
+ ```
 		fruits = ["apple", "banana", "cherry"]
 
 		for fruit in fruits:
@@ -195,13 +207,18 @@ Break and Continue Statements: These statements are used within loops to alter t
     		if fruit == "banana":
         		continue
     		print(fruit)
+```
+
 Exception Handling (try, except, finally): Allows you to handle errors or exceptional situations gracefully without crashing the program.
+
+```
 	try:
     		x = 10 / 0
 	except ZeroDivisionError:
     		print("Error: Division by zero")
 	finally:
     		print("This block always executes")
+```
 
 In this example, the try block attempts to execute the code inside it, and if an exception occurs, the except block catches the exception and handles it. 
 The finally block always executes, regardless of whether an exception occurred or not.
@@ -214,8 +231,11 @@ Functions in Python are blocks of reusable code that perform a specific task.
 They help in organizing code into manageable pieces, making it easier to understand, debug, and maintain. 
 
 Defining Functions: You define a function using the def keyword followed by the function name and parentheses ().
+
+```
 	def greet(name):
     	print("Hello, " + name + "!")
+```
 
 In this example, greet is the function name, and name is a parameter that the function expects.
 
@@ -225,8 +245,11 @@ Calling Functions: To execute the code inside a function, you "call" the functio
 This line of code calls the greet function and passes the string "Alice" as the name parameter.
 
 Return Statement: Functions can optionally return a value using the return statement. This allows the function to send data back to the caller.
+
+```
 	def add(x, y):
     	return x + y
+```
 
 In this example, the add function takes two parameters x and y, adds them together, and returns the result.
 
@@ -241,22 +264,27 @@ If no message is provided when calling the function, it will default to "Hello".
 Docstrings: Docstrings are documentation strings that describe what the function does. 
 They are enclosed in triple quotes """ and are placed immediately after the function definition.
 
+```
+
 	def greet(name):
     	"""
     	This function greets the user with their name.
     	"""
-    	print("Hello, " + name + "!")
+	print("Hello, " + name + "!")
+```
 
 Docstrings help other developers understand how to use the function and what it does.
 
 Scope: Variables defined inside a function are local to that function and cannot be accessed from outside. 
 Variables defined outside a function are global and can be accessed from within the function.
+
+```
 	x = 10
-
 	def print_x():
-    		print(x)  # Accesses the global variable x
-
+	print(x)  # Accesses the global variable x
 	print_x()  # Prints 10
+```
+
 # Classes and Objects 
 
 In Python, a class is a blueprint for creating objects, and an object is an instance of a class. 
@@ -264,13 +292,14 @@ In Python, a class is a blueprint for creating objects, and an object is an inst
 Class: A class is a template or blueprint that defines the attributes (properties) and methods (functions) that all objects of that class will have. 
 It serves as a blueprint for creating objects. You define a class using the class keyword.
 
-	class Dog:
-    	   def __init__(self, name, age):
-        	self.name = name
-        	self.age = age
-    
-    	   def bark(self):
-        	print(f"{self.name} says Woof!")
+```
+class Dog:
+	def __init__(self, name, age):
+	self.name = name
+	self.age = age
+	def bark(self):
+	print(f"{self.name} says Woof!")
+```
 
 In this example, Dog is a class that has attributes name and age, and a method bark().
 
@@ -288,23 +317,29 @@ They represent the state of the object. You access attributes using dot notation
 
 Methods: Methods are functions that are defined within a class and perform operations on the object's attributes. 
 They represent the behavior of the object. You call methods using dot notation (object.method()).
-	my_dog.bark()  # Output: Buddy says Woof!
+```
+my_dog.bark()  # Output: Buddy says Woof!
+```
 
 Constructor (__init__): The __init__ method is a special method called the constructor. 
 It is automatically called when you create a new object of the class and is used to initialize the object's attributes.
-	def __init__(self, name, age):
-    	self.name = name
-    	self.age = age
+
+```
+def __init__(self, name, age):
+self.name = name
+self.age = age
+```
 
 Self: self is a reference to the current instance of the class. It is used to access variables and methods within the class.
 
 Inheritance: Inheritance is a mechanism in which a new class inherits properties and behavior (attributes and methods) from an existing class. 
 The new class is called a subclass, and the existing class is called a superclass or parent class.
-
-	class Labrador(Dog):
-    	def __init__(self, name, age, color):
-        super().__init__(name, age)
-        self.color = color
+```
+class Labrador(Dog):
+def __init__(self, name, age, color):
+super().__init__(name, age)
+self.color = color
+```
 
 In this example, Labrador is a subclass of Dog, and it inherits the attributes and methods of the Dog class.
 
@@ -324,8 +359,10 @@ In Python, integers can be positive, negative, or zero. <br>
 You can perform arithmetic operations like addition, subtraction, multiplication, and division on integers. <br>
 In Python, integer variables are declared without any decimal point.
 
+```
 x = 5    # This is an integer assignment
 y = -10  # This is also an integer assignment
+```
 
 Floating-Point Numbers (float): <br>
 Floating-point numbers, or floats, are numbers that have both integer and fractional parts. <br>
@@ -333,24 +370,30 @@ Examples of floats are: 3.14, 0.5, 1.0, -123.456, etc. <br>
 Floats can represent a wide range of numbers, including very small and very large values, with varying levels of precision.<br>
 In Python, floating-point variables are declared with a decimal point or in scientific notation. 
 
+```
 a = 3.14    # This is a floating-point assignment
 b = -0.5    # This is also a floating-point assignment
+```
 
 The difference between integers and floats in Python:
+```
 # Integer variables
 x = 5
 y = -10
-
+```
+```
 # Float variables
 a = 3.14
 b = -0.5
-
+```
+```
 # Performing arithmetic operations
 sum_int = x + y  # Sum of two integers
 sum_float = a + b  # Sum of two floats
 
 print("Sum of integers:", sum_int)  # Output: Sum of integers: -5
 print("Sum of floats:", sum_float)  # Output: Sum of floats: 2.64
+```
 
 In summary, integers are used to represent whole numbers, while floats are used to represent numbers with decimal parts. 
 
