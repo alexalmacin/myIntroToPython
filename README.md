@@ -910,6 +910,191 @@ squares_generator = (x ** 2 for x in numbers)
 Comprehensions are concise, readable, and efficient ways to create collections in Python, and they are widely used in Python code for various tasks. 
 They are particularly useful for transforming data and applying operations to iterables in a compact and expressive manner.
 
+# Day 5 
+## Basic Control Flow
+### If and Else
+
+In Python, if and else are control flow statements used for conditional execution of code. They allow you to execute certain blocks of code only if a specified condition is true. 
+
+### if Statement:
+The if statement is used to check a condition and execute a block of code if the condition is true.
+
+```
+if condition:
+    # Code block to execute if the condition is true
+    statement1
+    statement2
+    ...
+```
+
+condition: An expression that evaluates to either True or False.
+Code block: The indented block of code that executes if the condition is True.
+
+```
+x = 10
+
+if x > 5:
+    print("x is greater than 5")
+```
+
+In this example, "x is greater than 5" will be printed because the condition x > 5 is true.
+
+### else Statement:
+The else statement follows an if statement and is used to execute a block of code if the preceding if condition is false.
+
+```
+if condition:
+    # Code block to execute if the condition is true
+    statement1
+    statement2
+    ...
+else:
+    # Code block to execute if the condition is false
+    statement3
+    statement4
+    ...
+```
+
+Example:
+
+```
+x = 3
+
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is not greater than 5")
+```
+
+In this example, "x is not greater than 5" will be printed because the condition x > 5 is false.
+
+### Nested if Statements:
+You can also nest if statements within other if statements or else blocks to create more complex conditional logic.
+
+```
+if condition1:
+    if condition2:
+        # Code block to execute if both condition1 and condition2 are true
+        statement1
+        statement2
+    else:
+        # Code block to execute if condition1 is true but condition2 is false
+        statement3
+        statement4
+else:
+    # Code block to execute if condition1 is false
+    statement5
+    statement6
+```
+
+Example:
+
+```
+x = 6
+y = 2
+
+if x > 5:
+    if y > 1:
+        print("x is greater than 5 and y is greater than 1")
+    else:
+        print("x is greater than 5 but y is not greater than 1")
+else:
+    print("x is not greater than 5")
+```
+
+In this example, "x is greater than 5 and y is greater than 1" will be printed because both conditions x > 5 and y > 1 are true.
+
+### While
+
+In Python, while is a control flow statement used for looping, which means it allows you to execute a block of code repeatedly based on a condition. 
+Here's a breakdown:
+
+
+```
+while condition:
+    # code block
+```
+
+- 'while': This is the keyword that tells Python we're starting a while loop.
+- 'condition': This is a boolean expression. As long as this condition is True, the code block inside the loop will continue to execute. Once the condition becomes False, the loop will stop.
+- ':': It's important to include the colon at the end of the while statement. It indicates the beginning of the code block that belongs to the while loop.
+- 'code block': This is the set of Python statements that will be executed repeatedly as long as the condition remains True.
+
+Here's a simple example to illustrate:
+
+
+```
+# Initializing a variable
+count = 0
+
+# While loop to print numbers from 0 to 4
+while count < 5:
+    print(count)
+    count += 1  # Incrementing count by 1 in each iteration
+```
+
+In this example:
+
+- We start with count equal to 0.
+- The while loop's condition checks if count is less than 5. Since count is 0, the condition is True, and the loop executes.
+- Inside the loop, it prints the value of count (which is 0) and then increments count by 1.
+- This process repeats until count is no longer less than 5. When count becomes 5, the condition becomes False, and the loop stops executing.
+
+So, the output of this code will be:
+
+```
+0
+1
+2
+3
+4
+```
+
+That's the basic idea behind using while loops in Python! They're handy for situations where you want to repeat a block of code until a certain condition is met.
+
+### For
+
+In Python, for is another type of loop that allows you to iterate over a sequence (such as a list, tuple, string, or range) and execute a block of code for each item in that sequence. 
+
+```
+for item in sequence:
+    # code block
+```
+
+- for: This is the keyword that tells Python we're starting a for loop.
+- item: This is a variable name that represents each item in the sequence as the loop iterates over it. You can choose any name for this variable.
+- in: This keyword is used to link the variable item with the sequence.
+- sequence: This is the collection of items over which the loop will iterate. It could be a list, tuple, string, range, or any other iterable object.
+- :: Like with while loops, the colon indicates the beginning of the code block that belongs to the for loop.
+- code block: This is the set of Python statements that will be executed for each item in the sequence.
+
+```
+# Iterating over a list of numbers
+numbers = [1, 2, 3, 4, 5]
+for num in numbers:
+    print(num)
+```
+
+In this example:
+
+- We have a list of numbers [1, 2, 3, 4, 5].
+- The for loop iterates over each item in the list.
+- For each iteration, the variable num takes on the value of the current item.
+- Inside the loop, it prints the value of num.
+
+So, the output of this code will be:
+
+```
+1
+2
+3
+4
+5
+```
+
+The for loop is very useful for iterating over collections of data, like lists or strings, and performing operations on each item within the collection. 
+
+
 
 
 
