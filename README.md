@@ -1094,6 +1094,557 @@ So, the output of this code will be:
 
 The for loop is very useful for iterating over collections of data, like lists or strings, and performing operations on each item within the collection. 
 
+# Week 2 - Day 6
+## Basic Functions
+### Functions
+
+In Python, a function is a block of reusable code that performs a specific task. Functions help organize code, make it more readable, and reduce redundancy. 
+
+Definition: You define a function using the def keyword, followed by the function name and parentheses. 
+Inside the parentheses, you can optionally specify parameters (inputs) that the function can accept.
+
+```
+def greet(name):
+    print("Hello, " + name + "!")
+````
+
+Usage: After defining a function, you can call it by using its name followed by parentheses. If the function expects parameters, you provide them inside the parentheses.
+
+```
+greet("Alice")
+```
+
+Return Values: Functions can optionally return a value using the return keyword. This allows the function to compute a result and pass it back to the code that called it.
+
+```
+def add(x, y):
+    return x + y
+```
+
+Calling Functions: When you call a function that returns a value, you can assign that value to a variable or use it directly in an expression.
+
+```
+result = add(3, 5)
+print(result)  # Output: 8
+```
+
+Functions are essential in Python programming because they allow you to break down your code into smaller, manageable pieces, making it easier to understand and maintain. 
+
+### Named Parameters
+
+
+Named parameters, also known as keyword arguments, are a way of passing arguments to a function by specifying the parameter name along with the value. 
+This allows you to pass arguments in any order, making your function calls more readable and flexible.
+
+Here's a simple explanation:
+
+Basic Parameter Passing: Normally, when you call a function, you pass arguments in the order they're defined in the function's parameter list.
+
+```
+def greet(name, message):
+    print(message, name)
+
+greet("Alice", "Hello")  # Output: Hello Alice
+```
+
+Named Parameters: Instead of relying on the order of parameters, you can specify which parameter each argument corresponds to by using the parameter name.
+
+```
+greet(message="Hello", name="Alice")  # Output: Hello Alice
+```
+
+Benefits: Using named parameters makes your function calls more self-explanatory. 
+It's especially useful when a function has many parameters or when you want to make it clear what each argument represents.
+
+```
+greet(name="Bob", message="Hi there")  # Output: Hi there Bob
+```
+
+Mixing Positional and Named Parameters: You can mix positional and named parameters, but positional arguments must come before named arguments.
+
+```
+greet("Charlie", message="Hey")  # Output: Hey Charlie
+```
+
+Named parameters provide flexibility and clarity when calling functions, making your code more readable and maintainable. 
+They're particularly helpful when working with functions that have many parameters or when you need to specify only a subset of arguments.
+
+### *args 
+
+In Python, *args is a special syntax that allows you to pass a variable number of positional arguments to a function. 
+Here's a simple explanation:
+
+Variable Number of Arguments: Normally, when you define a function, you specify a fixed number of parameters.
+
+```
+def my_function(a, b, c):
+    print(a, b, c)
+
+my_function(1, 2, 3)  # Output: 1 2 3
+```
+
+*Using args: If you prefix a parameter with * (asterisk) in the function definition, like *args, it collects any extra positional arguments passed to the function into a tuple.
+
+```
+def my_function(*args):
+    print(args)
+
+my_function(1, 2, 3)  # Output: (1, 2, 3)
+```
+
+Accessing Arguments: Inside the function, args behaves like a tuple containing all the positional arguments passed to the function.
+
+```
+def my_function(*args):
+    for arg in args:
+        print(arg)
+
+my_function(1, 2, 3)
+# Output:
+# 1
+# 2
+# 3
+```
+
+Usage: You can use *args when you're not sure how many arguments the function will receive or when you want to pass a variable number of arguments without explicitly defining each parameter.
+
+```
+def concatenate(*args):
+    return ''.join(args)
+
+result = concatenate("Hello", " ", "World")
+print(result)  # Output: Hello World
+```
+
+*args is handy when you need to create functions that are flexible and can accept any number of arguments. 
+It's commonly used in scenarios where the exact number of arguments may vary, such as with print() or string formatting functions.
+
+### **kwargs
+
+In Python, **kwargs is a special syntax that allows you to pass a variable number of keyword arguments to a function. 
+Here's a simple explanation:
+
+Fixed and Named Arguments: Like with *args, when you define a function, you typically specify a fixed number of parameters. 
+You can also have named parameters (keyword arguments).
+
+```
+def my_function(a, b, c=0):
+    print(a, b, c)
+
+my_function(1, 2, c=3)  # Output: 1 2 3
+```
+
+Using **kwargs: If you prefix a parameter with ** (double asterisk) in the function definition, like **kwargs, it collects any extra keyword arguments passed to the function into a dictionary.
+
+```
+def my_function(**kwargs):
+    print(kwargs)
+
+my_function(a=1, b=2, c=3)  # Output: {'a': 1, 'b': 2, 'c': 3}
+```
+
+Accessing Arguments: Inside the function, kwargs behaves like a dictionary containing all the keyword arguments passed to the function.
+
+```
+def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(key, "->", value)
+
+my_function(name="Alice", age=30)
+# Output:
+# name -> Alice
+# age -> 30
+```
+
+Usage: You can use **kwargs when you're not sure which named arguments the function will receive or when you want to pass a variable number of keyword arguments without explicitly defining each parameter.
+
+```
+def greet(**kwargs):
+    if 'name' in kwargs:
+        print("Hello,", kwargs['name'])
+    else:
+        print("Hello, there!")
+
+greet(name="Alice")  # Output: Hello, Alice
+greet()  # Output: Hello, there!
+```
+
+**kwargs is helpful when you need to create functions that are flexible and can accept any number of keyword arguments. 
+It's commonly used in scenarios where the exact set of named arguments may vary or when you need to pass a large number of arguments to a function.
+
+## Variables and Scope
+
+### Function Scope
+
+Function scope in Python refers to the area of a program where a variable is accessible. 
+
+Global Scope: Variables defined outside of any function are considered to be in the global scope. 
+They can be accessed from anywhere in the program, including inside functions.
+
+```
+x = 10  # Global variable
+
+def my_function():
+    print(x)  # Accessing global variable
+
+my_function()  # Output: 10
+```
+
+Local Scope: Variables defined inside a function are in the local scope of that function. 
+They can only be accessed from within the function where they are defined.
+
+```
+def my_function():
+    y = 20  # Local variable
+    print(y)
+
+my_function()  # Output: 20
+```
+
+Scope Hierarchy: Python follows a hierarchical order when looking for variable names. It first checks the local scope, then the enclosing (non-local) scopes, and finally the global scope.
+
+```
+z = 30  # Global variable
+
+def outer_function():
+    z = 40  # Enclosing scope
+    print(z)
+
+    def inner_function():
+        print(z)  # Accessing z from enclosing scope
+
+    inner_function()
+
+outer_function()
+# Output:
+# 40
+# 40
+```
+
+global Keyword: If you need to modify a global variable from within a function, you can use the global keyword to explicitly declare the variable as global.
+
+```
+x = 50  # Global variable
+
+def modify_global():
+    global x
+    x = 60
+
+modify_global()
+print(x)  # Output: 60
+```
+
+### locals()
+
+In Python, locals() is a built-in function that returns a dictionary containing the current local symbol table. 
+Here's a simple explanation:
+
+Symbol Table: In Python, a symbol table is a data structure that stores information about the names defined in the current scope, including variables, functions, classes, and modules.
+
+Local Variables: When you call locals() inside a function, it returns a dictionary containing all the variables defined within that function's local scope, along with their current values.
+
+```
+def my_function():
+    x = 10
+    y = 20
+    print(locals())
+
+my_function()
+# Output: {'x': 10, 'y': 20}
+```
+
+Usage: locals() can be useful for debugging and introspection purposes, allowing you to inspect the variables within a function's local scope at runtime.
+
+```
+def my_function():
+    a = 100
+    b = 200
+    print(locals())
+
+my_function()
+# Output: {'a': 100, 'b': 200}
+```
+
+Caution: Although you can access and modify variables using locals(), it's generally not recommended to rely on it for variable manipulation. 
+It's primarily used for introspection and should be used with caution, especially in production code.
+
+Understanding locals() can be helpful when you need to inspect the current state of variables within a function, but it's essential to use it responsibly and avoid relying on it for regular variable manipulation.
+
+### globals()
+
+In Python, globals() is a built-in function that returns a dictionary containing all the global variables in the current scope. 
+Here's a simple explanation:
+
+Global Variables: Global variables are variables defined outside of any function or class. They can be accessed from anywhere in the program.
+
+```
+x = 10  # Global variable
+
+def my_function():
+    print(globals())
+
+my_function()
+# Output: {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7f8077f652b0>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, '__file__': 'main.py', '__cached__': None, 'x': 10, 'my_function': <function my_function at 0x7f8077f3d670>}
+```
+
+Usage: globals() returns a dictionary where the keys are the variable names, and the values are their corresponding values. 
+It's useful for introspection purposes and for accessing or modifying global variables from within functions.
+
+```
+def my_function():
+    globals()['x'] = 20  # Modifying global variable
+    print(x)
+
+my_function()
+# Output: 20
+```
+
+Caution: While globals() allows you to access and modify global variables dynamically, it's generally not recommended to rely on it for regular variable manipulation. 
+It's primarily used for introspection and should be used with caution, especially in production code.
+
+Understanding globals() can be helpful when you need to inspect or manipulate global variables dynamically, but it's essential to use it responsibly and avoid relying on it for regular variable access and modification.
+
+## Functions As Variables
+
+In Python, you can assign a function to a variable, essentially treating the function as a value that can be stored and manipulated just like any other data. 
+Here's how it works:
+
+1-Assigning Functions to Variables:
+You can define a function and then assign it to a variable. For example:
+
+
+```
+def say_hello():
+    print("Hello!")
+
+my_variable = say_hello
+```
+
+2-Using Functions Through Variables:
+Once you've assigned a function to a variable, you can call that function using the variable name. 
+For example:
+
+```
+my_variable()  # This will call the say_hello function and print "Hello!"
+```
+
+3-Passing Variables Containing Functions:
+You can pass variables containing functions to other functions, just like you would pass any other type of data. 
+For example:
+
+```
+def call_function(func):
+    func()
+
+call_function(my_variable)  # This will call the say_hello function and print "Hello!"
+```
+
+4-Storing Functions in Data Structures:
+Functions stored in variables can also be stored in data structures like lists or dictionaries. 
+For example:
+
+```
+function_list = [say_hello, my_variable]
+for func in function_list:
+    func()  # This will call both say_hello and my_variable, printing "Hello!" twice.
+```
+
+### Text processing in Python
+
+Text processing in Python involves manipulating and analyzing text data using various techniques and libraries available in the Python programming language. 
+
+### Lambda Functions 
+
+Lambda functions in Python are small, anonymous functions that can have any number of parameters but only one expression. 
+They are often used when you need a short function for a short period of time. 
+
+Syntax:
+The syntax for a lambda function is:
+
+```
+lambda arguments: expression
+```
+Lambda functions can take any number of arguments, but they can only have one expression.
+
+Anonymous Functions:
+Lambda functions are anonymous, which means they don't need to be defined with a name like regular functions. Instead, they are defined inline where they are needed.
+
+Example:
+Let's say you want to create a simple function to add two numbers. 
+You can define a lambda function for this:
+
+```
+add = lambda x, y: x + y
+```
+
+Here, add is the variable name for the lambda function, and x and y are the parameters. The expression x + y calculates the sum of x and y.
+
+Using Lambda Functions:
+You can use lambda functions in the same way you would use regular functions. 
+For example:
+
+```
+result = add(3, 5)
+print(result)  # Output: 8
+```
+
+Common Use Cases:
+Lambda functions are often used when you need a simple function for a short operation, especially when you're working with functions like map(), filter(), and sorted(). 
+They're also commonly used in situations where you need to pass a function as an argument to another function.
+Example:
+
+```
+numbers = [1, 2, 3, 4, 5]
+squared = map(lambda x: x ** 2, numbers)
+print(list(squared))  # Output: [1, 4, 9, 16, 25]
+```
+
+Lambda functions provide a concise and convenient way to create small, single-use functions in Python, making your code more readable and expressive in certain contexts.
+
+# Week 2 - Day 3
+## Anatomy of a Class
+### Instance Attributes
+
+instance attributes are variables that are associated with a specific instance of a class. 
+
+Class - Defines the properties and behaviors that all instances of that class will have
+Instance - An instance is a specific object created from a class. Each instance can have its own unique set of attributes.
+Attributes - variables that belong to an object. They store information about the object's state.
+
+```
+class Dog:
+    def __init__(self, name, age):
+        self.name = name   # This is an instance attribute
+        self.age = age     # This is also an instance attribute
+
+# Creating instances of the Dog class
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Max", 5)
+
+# Accessing instance attributes
+print(dog1.name)  # Output: Buddy
+print(dog2.age)   # Output: 5
+```
+
+In this example, name and age are instance attributes of the Dog class. Each instance of the Dog class (dog1 and dog2) has its own name and age attributes, which can be accessed and modified independently.
+
+
+### Static Attributes 
+
+Also known as class attributes in Python, are attributes that belong to the class itself rather than to any particular instance of the class. 
+
+Class - defines the properties and behaviors that all instances of that class will have.
+Instance - a specific object created from a class.
+Static/Class Attribute - shared among all instances of the class. They are defined within the class, but outside of any instance methods.
+
+```
+class Car:
+    # This is a static attribute
+    wheels = 4
+    
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+# Creating instances of the Car class
+car1 = Car("Toyota", "Camry")
+car2 = Car("Honda", "Civic")
+
+# Accessing static attribute
+print(Car.wheels)  # Output: 4
+
+# Static attributes can also be accessed through instances
+print(car1.wheels) # Output: 4
+print(car2.wheels) # Output: 4
+```
+
+In this example, wheels is a static attribute of the Car class. It is defined outside of any instance methods, and it's accessed using the class name Car. 
+All instances of the Car class share the same value for the wheels attribute.
+
+Static attributes are useful when you have data that should be shared among all instances of a class, such as constants or default values. 
+They help in organizing and managing class-level data efficiently.
+
+### Instance and Static Methods
+
+Instance Methods:
+- most common type of methods in Python classes.
+- operate on an instance of the class and can access and modify instance attributes.
+- are defined with the 'def' keyword inside the class and take 'self' as the first parameter, which refers to the instance calling the method.
+- can access both instance attributes (using self) and class attributes (using ClassName).
+
+```
+class Dog:
+    def __init__(self, name):
+        self.name = name
+    
+    def bark(self):
+        print(f"{self.name} says woof!")
+
+# Creating an instance of the Dog class
+my_dog = Dog("Buddy")
+
+# Calling the instance method
+my_dog.bark()  # Output: Buddy says woof!
+```
+
+Static Methods:
+- are methods that belong to the class itself, rather than any particular instance.
+- do not have access to instance attributes or class attributes directly (no self or ClassName references).
+- are defined using the '@staticmethod' decorator above the method definition.
+- are mainly used for utility functions that do not depend on class or instance state.
+
+```
+class MathOperations:
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+# Calling the static method
+result = MathOperations.add(3, 5)
+print(result)  # Output: 8
+```
+
+In this example, add() is a static method of the MathOperations class. 
+It doesn't need access to any instance attributes or class attributes, so it's defined as a static method. 
+You call it directly on the class itself (MathOperations.add()), rather than on an instance of the class.
+
+Instance methods and static methods serve different purposes, so you choose the appropriate type based on whether you need access to instance attributes or class attributes within the method.
+
+### Inheritance 
+
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a new class to inherit attributes and methods from an existing class. 
+
+Parent Class/Based Class: Serves as the blueprint for other classes. It contains attributes and methods that are common to all its subclasses.
+Derived Class/Child Class: It can access all the attributes and methods of the base class and can also have its own unique attributes and methods.
+
+```
+# Base class
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def make_sound(self):
+        pass  # Placeholder method
+
+# Derived class
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof!"
+
+# Creating instances of derived class
+my_dog = Dog("Buddy")
+print(my_dog.name)         # Output: Buddy
+print(my_dog.make_sound()) # Output: Woof!
+```
+
+In this example:
+
+- The Animal class is the base class with an attribute name and a method make_sound.
+- The Dog class is a derived class that inherits from Animal. It overrides the make_sound method to provide a specific implementation for dogs.
+When you create an instance of Dog, it inherits the name attribute and the make_sound method from the Animal class.
+
+Inheritance allows for code reusability, as you can define common behavior and attributes in a base class and then create specialized classes that inherit from it. 
+
 
 
 
