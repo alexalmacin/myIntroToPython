@@ -1094,7 +1094,7 @@ So, the output of this code will be:
 
 The for loop is very useful for iterating over collections of data, like lists or strings, and performing operations on each item within the collection. 
 
-# Week 2 - Day 6
+# Week 2 - Day 1
 ## Basic Functions
 ### Functions
 
@@ -1501,7 +1501,7 @@ print(list(squared))  # Output: [1, 4, 9, 16, 25]
 
 Lambda functions provide a concise and convenient way to create small, single-use functions in Python, making your code more readable and expressive in certain contexts.
 
-# Week 2 - Day 3
+# Week 2 - Day 2
 ## Anatomy of a Class
 ### Instance Attributes
 
