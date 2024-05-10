@@ -1,0 +1,568 @@
+# How to Print
+
+```
+# This a sentence being printed
+print("This is a string")
+```
+
+# Accepting User Input
+
+By default, it returns the user input as a string. By default, the input() function accepts user input as a string.
+
+```
+# This will ask a user for their input
+val = input("Enter Value: ")
+print(val)
+```
+
+Output
+
+```
+Enter your value: Yes
+Yes
+```
+
+# Operators in Python 
+## Arithmetic Operators
+
+```
+# Examples of Arithmetic Operator
+a = 9 
+b = 4
+
+# How to add
+add = a + b
+
+# How to subtract
+sub = a - b
+
+# How to multiply
+mul = a * b
+
+# How to get module of both
+mod = a % b
+
+# How to get power
+p = a ** b
+
+# Print results
+print(add)
+print(sub)
+print(mul)
+print(mod)
+print(p)
+```
+
+Output
+
+```
+13
+5
+36
+1
+6561
+```
+
+## Comparison Operators
+
+When comparing values, relational operators are utilized. Depending on the criteria, it returns True or False.
+
+```
+# Examples of Relational Operators
+a = 13 
+b = 33
+
+# a > b is False
+print(a > b)
+
+# a < b is True
+print(a < b)
+
+# a == b
+print(a == b)
+
+# a != b is True
+print(a != b)
+
+# a >= b is False
+print(a >= b)
+
+# a <= b is True
+print(a <= b)
+```
+
+Output
+
+```
+False
+True
+False
+True
+False
+True
+```
+		
+## Logical Operators 
+
+Logical operators are used on conditional statements in Python (either True or False). They conduct the logical AND, OR, and NOT operations.
+
+```
+# Examples of Logical Operator
+a = True
+b = False
+
+# Print a and b is False
+print(a and b)
+
+# Print a or b is True
+print(a or b)
+
+# Print not a is False
+print(not a)
+```
+
+Output
+
+```
+False
+True
+False
+```
+
+## Bitwise Operators 
+
+Bitwise operators are used in Python to do bitwise operations on integers. 
+After converting the numbers to binary, operations are done on each bit or corresponding pair of bits, hence the name bitwise operators.
+
+```
+# Examples of Bitwise operators
+a = 10
+b = 4
+
+# Print bitwise AND operation
+print(a & b)
+
+# Print bitwise OR operation
+print(a | b)
+
+# Print bitwise NOT operation
+print(~a)
+
+# print bitwise XOR operation
+print(a ^ b)
+
+# print bitwise right shift operation
+print(a >> 2)
+
+# print bitwise left shift operation
+print(a << 2)
+```
+
+Output
+
+```
+0
+14
+-11
+14
+2
+40
+```
+
+# How to Comment
+
+```
+# This is a single Line comment
+
+""" This is 
+a multi line comment"""
+name = "Something amazing I guess."
+print(name)
+```
+
+Output
+
+```
+Something amazing I guess.
+```
+
+# Data Types
+
+```
+# DataType Output: str
+x = "Hello World"
+
+# DataType Output: int
+x = 50
+
+# DataType Output: float
+x = 60.5
+
+# DataType Output: complex
+x = 3j
+
+# DataType Output: list
+x = ["geeks", "for", "geeks"]
+
+# DataType Output: tuple
+x = ("geeks", "for", "geeks")
+
+# DataType Output: range
+x = range(10)
+
+# DataType Output: dict
+x = {"name": "Suraj", "age": 24}
+
+# DataType Output: set
+x = {"geeks", "for", "geeks"}
+
+# DataType Output: frozenset
+x = frozenset({"geeks", "for", "geeks"})
+
+# DataType Output: bool
+x = True
+
+# DataType Output: bytes
+x = b"Geeks"
+
+# DataType Output: bytearray
+x = bytearray(4)
+
+# DataType Output: memoryview
+x = memoryview(bytes(6))
+
+# DataType Output: NoneType
+x = None
+```
+
+# How to List
+
+The Python list is a sequence data type that is used to store the collection of data. 
+Tuples and String are other types of sequence data types.
+
+```
+Var = ["Geeks", "for", "Geeks"]
+print(Var)
+```
+
+Output
+
+```
+['Geeks', 'for', 'Geeks']
+```
+
+## List Comprehension
+
+list comprehension is made up of brackets carrying the expression, which is run for each element, as well as the for loop, which is used to iterate over the Python list’s elements.
+
+```
+# Using list comprehension to iterate through loop
+List = [character for character in [1, 2, 3]]
+
+# Displaying list
+print(List)
+```
+
+Output
+
+```
+[1, 2, 3]
+```
+
+# How to Dictionary 
+
+A dictionary in Python is a collection of key values, used to store data values like a map, which, unlike other data types holds only a single value as an element.
+
+```
+Dict = {1: 'Geeks', 2: 'For', 3: 'Geeks'}
+print(Dict)
+```
+
+Output
+
+```
+{1: 'Geeks', 2: 'For', 3: 'Geeks'}
+```
+
+## Dictionary Comprehension
+
+We can create dictionaries using simple expressions. A dictionary comprehension takes the form {key: value for (key, value) in iterable}
+
+```
+# Lists to represent keys and values
+keys = ['a','b','c','d','e']
+values = [1,2,3,4,5]
+
+# but this line shows dict comprehension here
+myDict = { k:v for (k,v) in zip(keys, values)}
+
+# We can use below too
+# myDict = dict(zip(keys, values))
+
+print (myDict)
+```
+
+Output
+
+```
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+```
+
+# How to Tuples
+
+Tuple is a list-like collection of Python objects. A tuple stores a succession of values of any kind, which are indexed by integers.
+
+```
+var = ("Geeks", "for", "Geeks")
+print(var)
+```
+
+Output
+
+```
+('Geeks', 'for', 'Geeks')
+```
+
+# Time to have sets
+
+A set is an unordered collection of data types that can be iterated, mutated and contains no duplicate elements. 
+The order of the elements in a set is unknown, yet it may contain several elements.
+
+```
+var = {"Geeks", "for", "Geeks"}
+print(var)
+```
+
+Output
+
+```
+{'for', 'Geeks'}
+```
+
+## How to String
+
+A string is a data structure that represents a collection of characters. A string cannot be changed once it has been formed because it is an immutable data type.
+
+```
+String1 = "GeeksForGeeks"
+print("Initial String: ")
+print(String1)
+
+# Printing First character
+print("\nFirst character of String is: ")
+print(String1[0])
+
+# Printing Last character
+print("\nLast character of String is: ")
+print(String1[-1])
+```
+
+Output 
+
+```
+Initial String: 
+GeeksForGeeks
+First character of String is: 
+G
+Last character of String is: 
+s
+```
+
+# How to string slice
+
+Strings in Python can be constructed with single, double, or even triple quotes. 
+The slicing method is used to access a single character or a range of characters in a String. A Slicing operator (colon) is used to slice a String.
+
+```
+# Creating a String
+String1 = "GeeksForGeeks"
+print("Initial String: ")
+print(String1)
+
+# Printing 3rd character
+print("\nSlicing characters from 3-12: ")
+print(String1[3])
+
+# Printing characters between
+# 3rd and 2nd last character
+print("\nSlicing characters between " +
+    "3rd and 2nd last character: ")
+print(String1[3:-2])
+```
+
+Output
+
+```
+Initial String: 
+GeeksForGeeks
+
+Slicing characters from 3-12: 
+k
+
+Slicing characters between 3rd and 2nd last character: 
+ksForGee
+```
+
+# Conditional Statements
+
+Decision-making statements in programming languages decide the direction(Control Flow) of the flow of program execution. 
+
+## If-Else
+
+In a conditional if Statement the additional block of code is merged as an else statement which is performed when if condition is false.
+
+```
+# python program to illustrate If else statement
+
+i = 20
+if (i < 15):
+    print("i is smaller than 15")
+else:
+    print("i is greater than 15")
+print("i'm not in if and not in else Block")
+```
+
+Output
+
+```
+i is greater than 15
+i'm not in if and not in else Block
+```
+
+## For Loop
+
+The For loop is used for sequential traversal, that is, iterating over an iterable such as a String, Tuple, List, Set, or Dictionary. 
+For loops in Python only support collection-based iteration.
+
+```
+# Python program to illustrate
+# Iterating over a list
+l = "I", "love", "mayonnaise"]
+
+for i in l:
+    print(i)
+```
+
+Output
+
+```
+I
+love
+mayonnaise
+```
+
+## While Loop
+
+The While Loop is used to execute a set of statements repeatedly until a condition is met. 
+When the condition is met, the line immediately following the loop in the program is run.
+
+```
+# Python program to illustrate
+# while loop
+count = 0
+while (count < 3):
+    count = count + 1
+    print("Hello there")
+```
+Output
+
+```
+Hello there
+Hello there
+Hello there
+```
+
+## Python Functions
+
+Python Functions are a collection of statements that serve a specific purpose. 
+The idea is to bring together some often or repeatedly performed actions and construct a function so that we can reuse the code included in it rather than writing the same code for different inputs over and over.
+
+```
+# A simple Python function
+def fun():
+    print("Welcome to the jungle")
+
+# Driver code to call a function
+fun()
+```
+
+Output
+
+```
+Welcome to the jungle
+```
+
+## Function Arguments
+
+Arguments are the values given between the function’s parenthesis. A function can take as many parameters as it wants, separated by commas.
+
+```
+# A simple Python function to check
+# whether x is even or odd
+def evenOdd(x):
+    if (x % 2 == 0):
+        print("even")
+    else:
+        print("odd")
+
+# Driver code to call the function
+evenOdd(2)
+evenOdd(3)
+```
+Output 
+
+```
+even
+odd
+```
+
+## Return Statement in Python Function
+
+The function return statement is used to terminate a function and return to the function caller with the provided value or data item.
+
+```
+# Python program to
+# demonstrate return statement
+def add(a, b):
+
+    # returning sum of a and b
+    return a + b
+
+def is_true(a):
+
+    # returning boolean of a
+    return bool(a)
+
+# calling function
+res = add(2, 3)
+print("Result of add function is {}".format(res))
+
+res = is_true(2<5)
+print("\nResult of is_true function is {}".format(res))
+```
+
+Output 
+
+```
+Result of add function is 5
+
+Result of is_true function is True
+```
+
+## The range() Function
+
+The Python range() function returns a sequence of numbers, in a given range.
+
+```
+# print first 5 integers
+# using python range() function
+for i in range(5):
+    print(i, end=" ")
+print()
+```
+
+Output
+
+```
+0 1 2 3 4 
+```
