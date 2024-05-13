@@ -1645,6 +1645,130 @@ When you create an instance of Dog, it inherits the name attribute and the make_
 
 Inheritance allows for code reusability, as you can define common behavior and attributes in a base class and then create specialized classes that inherit from it. 
 
+# Week 2 - Day 3
+## Handling Errors and Exceptions
+
+Errors and exceptions are a natural part of programming. They occur when something unexpected happens during the execution of a program. 
+
+- Errors:
+	Errors in Python can be broadly categorized into two types: syntax errors and runtime errors.
+	Syntax errors occur when you write code that violates the syntax rules of Python. 
+	These errors are caught by the Python interpreter during the parsing of the code, and the program cannot run until they are fixed.
+	Runtime errors, also known as exceptions, occur during the execution of a program. 
+	These can happen due to various reasons such as invalid input, division by zero, or trying to access a variable that doesn't exist.
+- Exceptions:
+	Exceptions in Python are objects that represent errors that occur during program execution.
+	When an exception occurs, Python raises an exception object. If the exception is not handled (caught) by the program, it will terminate and display an error message, known as a traceback.
+	However, Python provides mechanisms to handle exceptions gracefully, allowing the program to recover from errors and continue execution.
+- Handling exceptions:
+	To handle exceptions in Python, you can use 'try' and 'except' blocks. 
+	Code that may raise an exception is placed inside the 'try' block, and code to handle the exception is placed inside the 'except' block.
+	If an exception occurs within the try block, Python searches for an appropriate except block. 
+	If one is found, the code inside the except block is executed, and then the program continues to run.
+	You can also include an optional else block after the except block, which is executed if no exception occurs in the try block.
+	Additionally, you can use finally block, which is executed regardless of whether an exception occurs or not. 
+	It is typically used for cleanup code (e.g., closing files or releasing resources).
+
+```
+try:
+    x = int(input("Enter a number: "))
+    result = 10 / x
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
+except ValueError:
+    print("Error: Invalid input! Please enter a number.")
+else:
+    print("No exceptions occurred.")
+finally:
+    print("This code always runs, regardless of exceptions.")
+```
+
+In this example, if the user enters a non-integer value or zero, a ValueError or ZeroDivisionError exception will occur, respectively. 
+The appropriate except block will handle each type of exception. 
+If no exceptions occur, the code inside the else block will be executed, followed by the code inside the finally block.
+
+### Try/Except
+
+In Python, the try and except blocks are used to handle exceptions gracefully.
+
+- try block:
+The try block is used to wrap around code that might raise an exception during its execution.
+You put the code that you suspect might raise an exception inside the try block.
+
+- except block:
+The except block is used to handle specific exceptions that might occur within the try block.
+If an exception occurs within the try block, Python searches for a matching except block to handle it.
+You can have multiple except blocks to handle different types of exceptions.
+If an exception occurs that doesn't match any of the specified types in the except blocks, it propagates to the outer scope or terminates the program if not handled.
+
+```
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
+except ValueError:
+    print("Error: Invalid input! Please enter a number.")
+```
+
+The try block contains code that attempts to convert user input into an integer (int(input("Enter a number: "))) and perform a division operation (10 / num).
+If the user enters a non-integer value or zero, a ValueError or ZeroDivisionError exception may occur, respectively.
+The except blocks handle each type of exception by providing specific error messages.
+If no exception occurs, the code inside the except block is skipped.
+
+Using try and except allows your program to gracefully handle errors without crashing, providing a smoother user experience and helping to debug and diagnose issues in your code.
+
+### Managing and Handling Exceptions
+
+Handling exceptions in Python is crucial for writing robust and error-tolerant code. 
+
+1 - Understanding Exceptions:
+In Python, exceptions are unexpected events that occur during the execution of a program and disrupt the normal flow of code.
+Common exceptions include TypeError, ValueError, ZeroDivisionError, and FileNotFoundError, among others.
+
+2 - Using try and except Blocks:
+The primary mechanism for handling exceptions in Python is the try and except statement.
+The try block encloses the code that may raise an exception.
+If an exception occurs within the try block, Python looks for a matching except block to handle it.
+The except block specifies the type of exception it can handle and provides code to handle that exception.
+
+3 - Handling Specific Exceptions:
+You can have multiple except blocks to handle different types of exceptions.
+By specifying different types of exceptions in separate except blocks, you can provide tailored error messages or error handling for each type of exception.
+
+4 - Handling Multiple Exceptions:
+You can use a single except block to handle multiple exceptions by specifying them as a tuple.
+This is useful when you want to perform the same error handling for multiple types of exceptions.
+
+5 - Using else and finally Blocks:
+The else block, if present, is executed if no exceptions occur within the try block.
+It is typically used for code that should only run if no exceptions are raised.
+The finally block, if present, is always executed regardless of whether an exception occurs or not.
+It is commonly used for cleanup code that should be executed regardless of exceptions, such as closing files or releasing resources.
+
+```
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
+except ValueError:
+    print("Error: Invalid input! Please enter a number.")
+else:
+    print("Result:", result)
+finally:
+    print("This code always runs, regardless of exceptions.")
+```
+
+In this example:
+
+If the user enters a non-integer value or zero, a ValueError or ZeroDivisionError exception may occur, respectively.
+The appropriate except block handles each type of exception by providing specific error messages.
+If no exception occurs, the code inside the else block is executed, followed by the code inside the finally block, which always runs regardless of exceptions.
+
+
 
 
 
