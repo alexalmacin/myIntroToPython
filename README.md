@@ -1768,6 +1768,140 @@ If the user enters a non-integer value or zero, a ValueError or ZeroDivisionErro
 The appropriate except block handles each type of exception by providing specific error messages.
 If no exception occurs, the code inside the else block is executed, followed by the code inside the finally block, which always runs regardless of exceptions.
 
+## Day 4 
+### Fundamentals of Threads and Processes
+
+1 - Threads and Processes: In Python, you can create parallel execution units using threads and processes. 
+Threads and processes are both ways to achieve concurrency, allowing your program to do multiple things at once.
+
+2 - Threads: Threads are lightweight units of execution within a process. 
+They share the same memory space, which means they can access the same data. Python's threading module provides a way to work with threads. 
+
+```
+import threading
+
+def my_function():
+    # Code to be executed by the thread
+    pass
+
+# Create a new thread
+my_thread = threading.Thread(target=my_function)
+my_thread.start()  # Start the thread
+```
+
+3 - Processes: Processes, on the other hand, are independent units of execution. Each process has its own memory space, which means they don't share data unless explicitly communicated. 
+Python's multiprocessing module provides a way to work with processes. 
+
+```
+import multiprocessing
+
+def my_function():
+    # Code to be executed by the process
+    pass
+
+# Create a new process
+my_process = multiprocessing.Process(target=my_function)
+my_process.start()  # Start the process
+```
+
+4 - Concurrency vs. Parallelism: Concurrency refers to the ability of a system to handle multiple tasks at the same time, while parallelism refers to actually executing multiple tasks simultaneously. 
+Threads enable concurrency, whereas processes enable both concurrency and parallelism.
+
+5 - Communication between Threads/Processes: Since threads share memory space, communication between threads is relatively easy but requires synchronization mechanisms like locks, semaphores, or queues to prevent race conditions. 
+Processes, on the other hand, can communicate via inter-process communication (IPC) mechanisms such as pipes, queues, shared memory, or sockets.
+
+6 - Use Cases: Threads are suitable for I/O-bound tasks (tasks that spend most of their time waiting for input/output operations) like network requests or file I/O operations. 
+Processes are suitable for CPU-bound tasks (tasks that require a lot of processing power) or when you need to isolate resources for each task.
+
+### Multithreading
+
+Multithreading in Python refers to the ability of a program to execute multiple threads simultaneously. Each thread represents a separate flow of execution within the same process. 
+
+1 - What is a Thread?: Think of a thread as a small unit of a process. A process is like a program running on your computer, and threads are like individual tasks within that program. 
+So, if you have a music player program, one thread might be responsible for playing the music, while another thread could handle user input.
+
+2 - Why Use Multithreading?: Multithreading allows your program to perform multiple tasks concurrently. 
+For example, if your program needs to download files from the internet while also updating its user interface, you can use multithreading to handle these tasks simultaneously, improving overall performance and responsiveness.
+
+3 - Python's Threading Module: Python provides a built-in module called threading for working with threads. 
+This module allows you to create, start, and manage threads in your Python programs.
+
+4 - Creating Threads: You can create a new thread by subclassing the Thread class from the threading module and overriding the run() method with the code you want to execute in that thread.
+
+```
+import threading
+
+# Define a function to be executed by the thread
+def my_function():
+    print("Hello from a thread!")
+
+# Create a new thread
+my_thread = threading.Thread(target=my_function)
+
+# Start the thread
+my_thread.start()
+```
+5 - Starting Threads: Once you've created a thread object, you can start it by calling the start() method. 
+This will begin the execution of the code specified by the target parameter in a separate thread.
+
+6 - Joining Threads: You can use the join() method to wait for a thread to complete its execution before continuing with the rest of the program. 
+This is useful when you need the results of a thread's work before proceeding.
+
+```
+# Wait for the thread to complete
+my_thread.join()
+
+print("Thread execution complete!")
+```
+
+7 - Thread Safety: Since threads share the same memory space, it's important to ensure that shared data is accessed safely to avoid race conditions and other concurrency issues. 
+This can be done using synchronization primitives like locks, semaphores, or queues.
+
+### Multiprocessing
+
+Multiprocessing in Python refers to the ability of a program to execute multiple processes simultaneously. Each process is an independent instance of the program running on the computer.
+
+1 - What is a Process?: Imagine a process as an individual program running on your computer. 
+When you open a web browser, it starts a process. Each process has its own memory space, data, and resources. 
+
+2 - Why Use Multiprocessing?: Multiprocessing allows your program to utilize multiple CPU cores efficiently, enabling it to perform multiple tasks simultaneously. 
+This can significantly improve the performance of CPU-bound tasks, such as heavy computation or data processing.
+
+3 - Python's Multiprocessing Module: Python provides a built-in module called multiprocessing for working with processes. 
+This module allows you to create, start, and manage processes in your Python programs.
+
+4 - Creating Processes: You can create a new process by subclassing the Process class from the multiprocessing module and overriding the run() method with the code you want to execute in that process.
+
+```
+import multiprocessing
+
+# Define a function to be executed by the process
+def my_function():
+    print("Hello from a process!")
+
+# Create a new process
+my_process = multiprocessing.Process(target=my_function)
+
+# Start the process
+my_process.start()
+```
+
+5 - Starting Processes: Once you've created a process object, you can start it by calling the start() method. 
+This will begin the execution of the code specified by the target parameter in a separate process.
+
+6 - Joining Processes: You can use the join() method to wait for a process to complete its execution before continuing with the rest of the program. 
+This is useful when you need the results of a process's work before proceeding.
+
+```
+# Wait for the process to complete
+my_process.join()
+
+print("Process execution complete!")
+```
+
+7 - Inter-Process Communication (IPC): Since processes have their own memory space, they can't directly share data like threads do. 
+Instead, you can use IPC mechanisms such as pipes, queues, shared memory, or sockets to communicate between processes.
+
 
 
 
