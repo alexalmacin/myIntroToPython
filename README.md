@@ -1902,6 +1902,213 @@ print("Process execution complete!")
 7 - Inter-Process Communication (IPC): Since processes have their own memory space, they can't directly share data like threads do. 
 Instead, you can use IPC mechanisms such as pipes, queues, shared memory, or sockets to communicate between processes.
 
+## Day 5 - Fundamentals of Working with Files
+### Opening, Reading and Writing
+
+Opening, reading, and writing files are essential operations for handling data. 
+
+1 - Opening a File: Before you can read from or write to a file in Python, you need to open it. Python provides a built-in function called open() for this purpose. 
+You need to specify the file path and the mode in which you want to open the file.
+
+```
+# Open a file for reading
+file = open('example.txt', 'r')
+
+# Open a file for writing (creates a new file if it doesn't exist)
+file = open('output.txt', 'w')
+
+# Open a file for appending (adds content to the end of an existing file)
+file = open('output.txt', 'a')
+```
+
+Here, 'r' stands for read mode, 'w' for write mode, and 'a' for append mode.
+
+2 - Reading from a File: Once you've opened a file for reading, you can use various methods to read its contents. 
+One common method is read() which reads the entire contents of the file as a string.
+
+```
+# Read the entire contents of the file
+content = file.read()
+print(content)
+```
+You can also read the file line by line using a loop:
+
+```
+# Read the file line by line
+for line in file:
+    print(line)
+```
+
+3 - Writing to a File: After opening a file for writing, you can use methods like write() to write data to it.
+
+```
+# Write data to the file
+file.write("Hello, world!\n")
+```
+Remember to close the file after writing:
+
+```
+# Close the file
+file.close()
+```
+
+4 - Context Managers: To ensure that a file is properly closed after its use, you can use a context manager (with statement). 
+It automatically closes the file when you're done with it, even if an error occurs.
+
+```
+# Using a context manager
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)
+```
+
+This way, you don't need to manually close the file.
+
+5 - File Modes: Besides read, write, and append modes, Python supports various other modes like binary mode ('b'), exclusive creation mode ('x'), and more. You can combine modes as needed.
+
+### CSV
+
+CSV stands for "Comma-Separated Values," and it's a popular file format used to store tabular data. 
+
+1 - What is CSV?: CSV is a simple and widely used file format for storing structured data. 
+Each line of a CSV file represents a row of data, and within each line, individual values are separated by commas (or sometimes other delimiters like tabs or semicolons).
+
+2 - Why Use CSV?: CSV is popular because it's easy to understand and widely supported by various software applications such as spreadsheet programs (like Microsoft Excel and Google Sheets) and database systems. 
+It's a common choice for storing data that needs to be easily exchanged between different systems or analyzed with tools like Python.
+
+3 - Working with CSV in Python: Python provides a built-in module called csv for working with CSV files. This module simplifies reading from and writing to CSV files.
+
+4 - Reading CSV Files: You can read data from a CSV file using the csv.reader() function. 
+This function returns a reader object that you can iterate over to access each row of data as a list of values.
+
+```
+import csv
+
+# Open CSV file for reading
+with open('data.csv', 'r') as file:
+    csv_reader = csv.reader(file)
+    
+    # Iterate over each row
+    for row in csv_reader:
+        print(row)
+```
+
+5 - Writing to CSV Files: Similarly, you can write data to a CSV file using the csv.writer() function. This function returns a writer object that you can use to write rows of data to the file.
+
+```
+import csv
+
+# Open CSV file for writing
+with open('output.csv', 'w', newline='') as file:
+    csv_writer = csv.writer(file)
+    
+    # Write rows of data
+    csv_writer.writerow(['Name', 'Age', 'City'])
+    csv_writer.writerow(['Alice', 30, 'New York'])
+    csv_writer.writerow(['Bob', 25, 'Los Angeles'])
+```
+
+6 - Specifying Delimiters and Quotes: By default, the csv module uses commas as delimiters and double quotes to enclose fields that contain special characters (like commas or newline characters). 
+However, you can specify custom delimiters and quoting behavior using the delimiter, quotechar, and other parameters of the csv.reader() and csv.writer() functions.
+
+```
+import csv
+
+# Reading CSV with custom delimiter and quote character
+with open('data.csv', 'r') as file:
+    csv_reader = csv.reader(file, delimiter=';', quotechar='"')
+    for row in csv_reader:
+        print(row)
+```
+
+7 - Handling Headers: CSV files often have a header row that contains the names of columns. 
+You can skip the header row when reading a CSV file by using the next() function to advance the reader object to the next row.
+
+```
+import csv
+
+# Skipping header row while reading CSV
+with open('data.csv', 'r') as file:
+    csv_reader = csv.reader(file)
+    headers = next(csv_reader)  # Skip the header row
+    for row in csv_reader:
+        print(row)
+```
+
+### JSON
+
+JSON stands for "JavaScript Object Notation," and it's a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. 
+
+1 - What is JSON?: JSON is a text-based format for representing structured data. 
+It's commonly used for transmitting data between a web server and a web browser, but it's also widely used in other contexts because of its simplicity and flexibility.
+
+2 - Why Use JSON?: JSON is popular because it's easy to understand, both for humans and computers. 
+It can represent complex data structures like arrays and objects, making it suitable for a wide range of applications, from web development to data exchange between different systems.
+
+3 - JSON Syntax: JSON syntax is similar to Python's dictionary and list syntax. It consists of key-value pairs separated by colons (:) and separated by commas (,). 
+JSON values can be strings, numbers, booleans, arrays (ordered lists), or objects (unordered collections of key-value pairs).
+
+```
+{
+    "name": "John",
+    "age": 30,
+    "is_student": false,
+    "languages": ["Python", "JavaScript", "Java"],
+    "address": {
+        "city": "New York",
+        "zipcode": "10001"
+    }
+}
+```
+
+4 - Working with JSON in Python: Python provides a built-in module called json for working with JSON data. 
+This module allows you to parse JSON strings into Python data structures and serialize Python data structures into JSON strings.
+
+5 - Parsing JSON: You can parse a JSON string into a Python data structure (usually a dictionary or a list) using the json.loads() function.
+
+```
+import json
+
+# JSON string
+json_string = '{"name": "John", "age": 30, "is_student": false}'
+
+# Parse JSON string into a Python dictionary
+data = json.loads(json_string)
+print(data)
+```
+
+6 - Serializing to JSON: Conversely, you can serialize a Python data structure into a JSON string using the json.dumps() function.
+
+```
+import json
+
+# Python dictionary
+data = {
+    "name": "John",
+    "age": 30,
+    "is_student": False
+}
+
+# Serialize Python dictionary to a JSON string
+json_string = json.dumps(data)
+print(json_string)
+```
+
+7 - Working with JSON Files: You can also read JSON data from a file or write JSON data to a file using the json.load() and json.dump() functions.
+
+```
+import json
+
+# Read JSON data from a file
+with open('data.json', 'r') as file:
+    data = json.load(file)
+    print(data)
+
+# Write JSON data to a file
+with open('output.json', 'w') as file:
+    json.dump(data, file)
+```
+
 
 
 
